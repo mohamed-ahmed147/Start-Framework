@@ -1,0 +1,45 @@
+<section>
+  <div class="container">
+    <div class="head text-center">
+      <h1 class="fw-bold text-black text-center mt-3">PRODUCTS COMPONENT</h1>
+      <app-star-lineblack></app-star-lineblack>
+      <div class="row  mt-1 mb-4">
+
+        <div class="d-flex align-items-center justify-content-center flex-wrap ">
+          @for (item of products; track item.id) {
+            <div class="col-sm-6 col-md-4 my-2 my-md-2">
+              <div class="card" style="width: 18rem;">
+                <img [src]="item.image" class="card-img-top w-100" alt="{{item.name}}">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.name}}</h5>
+                  <p class="card-text">{{item.description}}</p>
+                  <p class="text-primary fw-bold">Price: ${{item.price}}</p>
+                  <a href="#" class="btn btn-primary">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+
+        <h3 class="text-start" #rec>Recomended Products...</h3>
+        <div class="d-flex align-items-center justify-content-center flex-wrap ">
+        @defer ( on viewport(rec)) {
+          @for (item of recomended; track item.id) {
+            <div class="col-sm-6 col-md-4 my-2 my-md-2">
+              <div class="card" style="width: 18rem;">
+                <img [src]="item.image" class="card-img-top w-100" alt="{{item.name}}">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.name}}</h5>
+                  <p class="card-text">{{item.description}}</p>
+                  <p class="text-primary fw-bold">Price: ${{item.price}}</p>
+                  <a href="#" class="btn btn-primary">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          }
+        }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

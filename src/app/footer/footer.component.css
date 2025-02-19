@@ -1,0 +1,26 @@
+footer {
+  background-color: #2C3E50;
+  padding: 40px 20px 0;
+  color: white;
+}
+
+.social i {
+  border: 1px solid white;
+  padding: 10px;
+  margin: 5px;
+  color: white !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.social i:hover {
+  border-color: #1ABC9C;
+  color: #1ABC9C !important;
+}
+
+.copyrite {
+  text-align: center;
+  background-color: #212529;
+  padding: 1.5rem;
+  margin: 20px  -20px 0 ;
+  font-size: 0.9rem;
+}

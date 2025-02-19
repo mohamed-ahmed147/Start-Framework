@@ -1,0 +1,32 @@
+.line_left
+{
+  position: relative;
+}
+
+.line_left::after{
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 40px;
+  width: 80px;
+  height: 4px;
+  background-color: #000;
+  z-index : 1;
+}
+
+.line_right
+{
+  position: relative;
+}
+
+.line_right::after{
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 40px;
+  width: 80px;
+  height: 4px;
+  background-color: #000;
+  z-index : 1;
+}
+

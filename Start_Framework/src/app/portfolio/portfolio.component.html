@@ -1,0 +1,38 @@
+<section>
+  <div class="container">
+    <div class="head text-center">
+      <h1 class="fw-bold text-black text-center mt-3">PORTFOLIO COMPONENT</h1>
+      <app-star-lineblack></app-star-lineblack>
+      <div class="row gy-5 mt-1 mb-4">
+
+        @for (item of items; track $index) {
+          <div class="col-4">
+            <div class="item" (click)="selectedimage(item, $index)">
+              <img src="{{item}}" class="w-100" alt="item image">
+              <div class="layer">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+          </div>
+        }
+
+        @if (hasImage) {
+          <div
+            class="w-100 layer-black vh-100 position-fixed top-0 start-0 z-1 end-0 bottom-0 d-flex align-items-center justify-content-center"
+            (click)="hideImage()"
+          >
+            <div class="w-50 position-relative" (click)="$event.stopPropagation()">
+              <img [src]="imagesel" class="w-100" alt="">
+              <button title="btn" class="btn-arrow-left" (click)="prev(); $event.stopPropagation()">
+                <i class="fa-solid fa-circle-left fs-2 text-white position-absolute top-50 start-0"></i>
+              </button>
+              <button title="btn" class="btn-arrow-right" (click)="next(); $event.stopPropagation()">
+                <i class="fa-solid fa-circle-right fs-2 text-white position-absolute top-50 end-0"></i>
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
